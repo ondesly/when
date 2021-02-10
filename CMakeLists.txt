@@ -19,3 +19,13 @@ set(CMAKE_XCODE_ATTRIBUTE_EXCLUDED_ARCHS[sdk=iphonesimulator*] "arm64")
 #########
 
 add_subdirectory(src)
+
+###########
+# Testing #
+###########
+
+enable_testing()
+
+if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+    add_subdirectory(tests)
+endif ()
