@@ -8,28 +8,19 @@
 
 project(tests)
 
-# TestIteration
+#
 
-add_executable(test_iteration test_iteration.cpp)
+function(add name)
+    add_executable(${name} ${name}.cpp)
 
-set_target_properties(test_iteration PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED YES
-        CXX_EXTENSIONS NO)
+    target_link_libraries(${name} days)
 
-target_link_libraries(test_iteration oo::days)
+    set_target_properties(${name} PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
 
-add_test(NAME TestIteration COMMAND test_iteration)
+    add_test(NAME ${name} COMMAND ${name})
+endfunction()
 
-# TestDistance
+#
 
-add_executable(test_distance test_distance.cpp)
-
-set_target_properties(test_distance PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED YES
-        CXX_EXTENSIONS NO)
-
-target_link_libraries(test_distance oo::days)
-
-add_test(NAME TestDistance COMMAND test_distance)
+add("test_iteration")
+add("test_distance")
