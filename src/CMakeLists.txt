@@ -10,28 +10,16 @@ add_library(when STATIC
         when/days.cpp
         when/now.cpp)
 
-target_include_directories(when PUBLIC
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/../include>
-        $<INSTALL_INTERFACE:include>)
-
-set_target_properties(when PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED YES
-        CXX_EXTENSIONS NO)
-
 #
 
+set(INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../include)
+
 set(PUBLIC_HEADERS
-        ../include/when/days.h
-        ../include/when/now.h)
+        ${INCLUDE_DIR}/when/days.h
+        ${INCLUDE_DIR}/when/now.h)
 
-install(TARGETS when
-        EXPORT when-config
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib
-        RUNTIME DESTINATION bin
-        INCLUDES DESTINATION include)
+set_target_properties(when PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
 
-install(FILES ${PUBLIC_HEADERS} DESTINATION include/when)
+target_include_directories(when PUBLIC $<BUILD_INTERFACE:${INCLUDE_DIR}> $<INSTALL_INTERFACE:include>)
 
-install(EXPORT when-config DESTINATION lib/cmake/when)
+set_target_properties(when PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
