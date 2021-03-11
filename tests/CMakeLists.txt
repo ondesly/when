@@ -24,3 +24,4 @@ endfunction()
 
 add("test_iteration")
 add("test_distance")
+add("test_now")

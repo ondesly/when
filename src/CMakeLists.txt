@@ -7,7 +7,8 @@
 #
 
 add_library(days STATIC
-        days/days.cpp)
+        days/days.cpp
+        days/now.cpp)
 
 add_library(oo::days ALIAS days)
 
@@ -23,7 +24,8 @@ set_target_properties(days PROPERTIES
 #
 
 set(PUBLIC_HEADERS
-        ../include/days/days.h)
+        ../include/days/days.h
+        ../include/days/now.h)
 
 install(TARGETS days
         EXPORT days-config
