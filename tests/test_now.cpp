@@ -8,7 +8,7 @@
 
 #include <chrono>
 
-#include <days/now.h>
+#include <when/now.h>
 
 int main() {
     const auto ref_ms = std::chrono::duration_cast<std::chrono::milliseconds>(

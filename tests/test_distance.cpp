@@ -6,7 +6,7 @@
 //  Copyright © 2021 Dmitrii Torkhov. All rights reserved.
 //
 
-#include <days/days.h>
+#include <when/days.h>
 
 int main() {
     const size_t ref = 4;

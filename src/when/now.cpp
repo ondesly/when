@@ -8,7 +8,7 @@
 
 #include <chrono>
 
-#include "days/now.h"
+#include "when/now.h"
 
 oo::now::operator uint32_t() const {
     return std::chrono::duration_cast<std::chrono::seconds>(
