@@ -1,6 +1,6 @@
 //
 //  test_distance.cpp
-//  days
+//  when
 //
 //  Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 10.02.2021.
 //  Copyright © 2021 Dmitrii Torkhov. All rights reserved.
