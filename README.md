@@ -1,5 +1,5 @@
-# days
-Tiny C++ lib to iterate through days
+# when
+Tiny C++ lib with time helpers
 
 ## Example
 ```cpp
