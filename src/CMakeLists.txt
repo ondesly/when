@@ -8,7 +8,8 @@
 
 add_library(when STATIC
         when/days.cpp
-        when/now.cpp)
+        when/now.cpp
+        when/stamp.cpp)
 
 #
 
@@ -16,7 +17,8 @@ set(INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../include)
 
 set(PUBLIC_HEADERS
         ${INCLUDE_DIR}/when/days.h
-        ${INCLUDE_DIR}/when/now.h)
+        ${INCLUDE_DIR}/when/now.h
+        ${INCLUDE_DIR}/when/stamp.h)
 
 set_target_properties(when PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
 
