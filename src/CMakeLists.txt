@@ -8,6 +8,7 @@
 
 add_library(when STATIC
         when/days.cpp
+        when/duration.cpp
         when/now.cpp
         when/stamp.cpp)
 
@@ -17,6 +18,7 @@ set(INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../include)
 
 set(PUBLIC_HEADERS
         ${INCLUDE_DIR}/when/days.h
+        ${INCLUDE_DIR}/when/duration.h
         ${INCLUDE_DIR}/when/now.h
         ${INCLUDE_DIR}/when/stamp.h)
 
