@@ -8,8 +8,10 @@
 
 #include "when/day.h"
 
+oo::day::day() : day(time(nullptr)) {}
+
 oo::day::day(time_t t) {
-    m_tm = *std::gmtime(&t);
+    gmtime_r(&t, &m_tm);
     m_tm.tm_hour = m_tm.tm_min = m_tm.tm_sec = 0;
 }
 

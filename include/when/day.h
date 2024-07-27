@@ -14,6 +14,7 @@ namespace oo {
 
     class day {
     public:
+        day();
         explicit day(time_t t);
 
     public:
