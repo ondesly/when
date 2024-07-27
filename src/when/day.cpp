@@ -10,7 +10,7 @@
 
 oo::day::day() : day(time(nullptr)) {}
 
-oo::day::day(time_t t) {
+oo::day::day(const time_t t) {
     gmtime_r(&t, &m_tm);
     m_tm.tm_hour = m_tm.tm_min = m_tm.tm_sec = 0;
 }
@@ -56,13 +56,15 @@ bool oo::day::operator==(const oo::day &other) const {
     return timegm(&tm1) == timegm(&tm2);
 }
 
-time_t oo::day::get_begin() const {
+time_t oo::day::get_timestamp(const part part) const {
     auto tm = m_tm;
-    return timegm(&tm);
-}
-
-time_t oo::day::get_end() const {
-    auto tm = m_tm;
-    tm.tm_mday += 1;
-    return timegm(&tm) - 1;
+    switch (part) {
+    case part::begin:
+        return timegm(&tm);
+    case part::end:
+        tm.tm_mday += 1;
+        return timegm(&tm) - 1;
+    default:
+        return 0;
+    }
 }

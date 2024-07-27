@@ -22,20 +22,20 @@ namespace {
 
 int main() {
     oo::day begin{constant::target_time};
-    assert(begin.get_begin() == constant::begin_time);
+    assert(begin.get_timestamp() == constant::begin_time);
 
     const oo::day forward_30 = begin + 30;
-    assert(forward_30.get_begin() == constant::forward_30_time);
+    assert(forward_30.get_timestamp() == constant::forward_30_time);
 
     const oo::day backward_30 = begin - 30;
-    assert(backward_30.get_begin() == constant::backward_30_time);
+    assert(backward_30.get_timestamp() == constant::backward_30_time);
 
     ++begin;
-    assert(begin.get_begin() == constant::forward_1_day_time);
+    assert(begin.get_timestamp() == constant::forward_1_day_time);
 
     --begin;
     --begin;
-    assert(begin.get_begin() == constant::backward_1_day_time);
+    assert(begin.get_timestamp() == constant::backward_1_day_time);
 
     return 0;
 }

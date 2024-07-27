@@ -20,7 +20,7 @@ int main() {
 
     std::map<time_t, time_t> m;
     for (const auto &day : oo::days{begin, end}) {
-        m.emplace(day.get_begin(), day.get_end());
+        m.emplace(day.get_timestamp(oo::day::part::begin), day.get_timestamp(oo::day::part::end));
     }
     assert(ref == m);
 

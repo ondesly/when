@@ -14,6 +14,12 @@ namespace oo {
 
     class day {
     public:
+        enum class part {
+            begin,
+            end,
+        };
+
+    public:
         day();
         explicit day(time_t t);
 
@@ -29,12 +35,10 @@ namespace oo {
 
         bool operator==(const day &other) const;
 
-        time_t get_begin() const;
-
-        time_t get_end() const;
+        [[nodiscard]] time_t get_timestamp(part part = part::begin) const;
 
     private:
-        tm m_tm;
+        tm m_tm{};
     };
 
 }
