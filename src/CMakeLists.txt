@@ -15,16 +15,7 @@ add_library(when STATIC
 
 #
 
-set(INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/../include)
-
-set(PUBLIC_HEADERS
-        ${INCLUDE_DIR}/when/days.h
-        ${INCLUDE_DIR}/when/duration.h
-        ${INCLUDE_DIR}/when/now.h
-        ${INCLUDE_DIR}/when/stamp.h)
-
-set_target_properties(when PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
-
-target_include_directories(when PUBLIC $<BUILD_INTERFACE:${INCLUDE_DIR}> $<INSTALL_INTERFACE:include>)
+target_include_directories(when
+        PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/../include>)
 
 set_target_properties(when PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
