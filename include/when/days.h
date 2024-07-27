@@ -17,7 +17,14 @@ namespace oo {
 
     class days {
     public:
-        class iterator : public std::iterator<std::forward_iterator_tag, oo::day, size_t, oo::day *, const oo::day &> {
+        class iterator {
+        public:
+            using iterator_category = std::forward_iterator_tag;
+            using value_type = oo::day;
+            using difference_type = size_t;
+            using pointer = oo::day *;
+            using reference = const oo::day &;
+
         public:
             explicit iterator(const oo::day &day);
 
