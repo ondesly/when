@@ -1,5 +1,5 @@
 //
-//  test_day.cpp
+//  test_day_arithmetic.cpp
 //  when
 //
 //  Created by Dmitrii Torkhov <dmitriitorkhov@gmail.com> on 27.07.2024.
@@ -12,11 +12,11 @@
 namespace {
     namespace constant {
         constexpr auto target_time = 1722072636;
-        constexpr auto begin_time = 1722031200;
-        constexpr auto forward_1_day_time = 1722117600;
-        constexpr auto backward_1_day_time = 1721944800;
-        constexpr auto forward_30_time = 1724623200;
-        constexpr auto backward_30_time = 1719439200;
+        constexpr auto begin_time = 1722038400;
+        constexpr auto forward_1_day_time = 1722124800;
+        constexpr auto backward_1_day_time = 1721952000;
+        constexpr auto forward_30_time = 1724630400;
+        constexpr auto backward_30_time = 1719446400;
     } // namespace constant
 } // namespace
 
