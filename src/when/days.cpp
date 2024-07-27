@@ -13,10 +13,10 @@ oo::days::days(time_t begin, time_t end) : m_begin(begin), m_end(end) {}
 oo::days::iterator oo::days::begin() const { return iterator{day{m_begin}}; }
 
 oo::days::iterator oo::days::end() const {
-    auto tm = std::localtime(&m_end);
+    auto tm = gmtime(&m_end);
     tm->tm_mday += 1;
 
-    return iterator{day{std::mktime(tm)}};
+    return iterator{day{timegm(tm)}};
 }
 
 // -- iterator --
