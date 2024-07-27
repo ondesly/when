@@ -21,6 +21,13 @@ namespace oo {
     public:
 
         day &operator++();
+        day &operator--();
+
+        day &operator+=(int count);
+        day &operator-=(int count);
+
+        friend oo::day operator+(oo::day day, int count);
+        friend oo::day operator-(oo::day day, int count);
 
         bool operator==(const day &other) const;
 

@@ -21,6 +21,34 @@ oo::day &oo::day::operator++() {
     return *this;
 }
 
+oo::day &oo::day::operator--() {
+    --m_tm.tm_mday;
+
+    return *this;
+}
+
+oo::day &oo::day::operator+=(const int count) {
+    m_tm.tm_mday += count;
+
+    return *this;
+}
+
+oo::day &oo::day::operator-=(const int count) {
+    m_tm.tm_mday -= count;
+
+    return *this;
+}
+
+oo::day oo::operator+(oo::day day, const int count) {
+    day += count;
+    return day;
+}
+
+oo::day oo::operator-(oo::day day, const int count) {
+    day -= count;
+    return day;
+}
+
 bool oo::day::operator==(const oo::day &other) const {
     auto tm1 = m_tm;
     auto tm2 = other.m_tm;
